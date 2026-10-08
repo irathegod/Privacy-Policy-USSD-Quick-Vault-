@@ -1,0 +1,66 @@
+Privacy Policy for USSD Quick Vault
+
+Last Updated: October 2026
+
+This Privacy Policy describes how **USSD Quick Vault** ("the App," "we," "our," or "us") handles information when you use our mobile application.
+We are committed to protecting user privacy, ensuring transparency regarding system permissions, and maintaining the security of all locally stored data.
+
+
+1. Core Purpose of the App
+USSD Quick Vault is an assistive utility designed to help users interact efficiently with carrier USSD sessions. 
+It assists individuals—particularly those with motor challenges, cognitive load issues, or repetitive data-entry requirements—by automating the input of 
+frequently used credentials (such as account numbers, meter IDs and menu selections) and selecting contacts directly within carrier USSD dialog menus.
+
+
+2. Prominent Disclosure: Use of Android AccessibilityService API
+To fulfill its core assistive functionality, USSD Quick Vault requires the activation of Android’s AccessibilityService API.
+
+* Why Existing APIs Cannot Be Used: The standard Android Autofill Framework does not operate within system telephony dialogs or carrier USSD prompt 
+overlays (`android.widget.EditText` inside carrier dialer overlays). The Accessibility API is the only Android system framework capable of detecting active 
+carrier USSD text nodes and programmatically inserting text using `AccessibilityNodeInfo.ACTION_SET_TEXT`.
+* Scope of Use: The AccessibilityService is utilized strictly when an active USSD session is detected on your screen to identify target input fields 
+and populate your chosen saved snippet or credential upon your command.
+* Strict Privacy Safeguards:
+* The AccessibilityService never monitors, reads, captures, or logs background screen content, personal messages, keystrokes outside USSD menus or sensitive 
+credentials.
+* The AccessibilityService does NOT transmit any screen information or user interactions over the network.
+* You can enable or disable this permission at any time via your device’s "Settings > Accessibility > USSD Quick Vault".
+
+3. Data Handling, Local Processing & Storage
+* On-Device Storage: All user-created snippets, account identifiers, meter numbers, phone numbers, and configuration settings are processed entirely on-device.
+* Encryption: All saved data is stored locally within encrypted private application storage (utilizing Android’s internal private app sandbox and 
+cryptographic storage standards).
+* No Server Storage: We do not operate remote databases or external servers that store, process, or maintain copies of your private credentials or USSD 
+interaction histories.
+* No Third-Party Sharing: Your personal credentials and input data are never sold, rented, shared, or exposed to third parties.
+
+4. Internet Access & Anonymous Telemetry
+The application declares the `<uses-permission android:name="android.permission.INTERNET" />` permission in its manifest solely for application maintenance:
+
+* Telemetry & Stability: The App may transmit anonymous crash logs, technical performance diagnostics and stability telemetry (such as device model, OS version, 
+  and crash stack traces).
+* Strict Non-PII Guarantee: This diagnostic telemetry contains **no personally identifiable information (PII)**, no saved snippets, no phone numbers
+  and no USSD content.
+* Purpose Limitation: Internet access is restricted exclusively to monitoring technical health and resolving software bugs to ensure the application remains stable.
+
+5. Data Retention & Deletion
+Because all user data is stored locally on your device:
+
+* You can modify or delete individual snippets directly from the App’s interface at any time.
+* You can permanently erase all stored credentials and application configurations by clearing the App's data via 
+  "Settings > Apps > USSD Quick Vault > Storage > Clear Data", or by uninstalling the App from your device.
+
+6. Children's Privacy
+USSD Quick Vault does not address or knowingly collect data from children under the age of 13.
+
+7. Changes to This Privacy Policy
+We may periodically update this Privacy Policy to reflect changes in our legal obligations, feature updates, or Google Play developer policy standards. 
+Any modifications will be posted directly to this URL with an updated revision date.
+
+8. Contact Information
+
+If you have questions, feedback, or concerns regarding this Privacy Policy or our accessibility implementation, please contact us at:
+
+* Developer / Organization: G.Percy Leburu / Sesoa(PTY)LTD
+* Support Email: everythingservices@sesoa.co.bw
+* Website / Repository: Your GitHub Pages or Website URL
